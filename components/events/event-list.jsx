@@ -7,17 +7,18 @@ export default function EventList(props) {
   return (
     <>
       <ul className={classes.list}>
-        {items.map((event) => (
-          <EventItem
-            key={event.id}
-            id={event.id}
-            title={event.title}
-            location={event.location}
-            date={event.date}
-            image={event.image}
-            event={event}
-          />
-        ))}
+        {Array.isArray(items) &&
+          items.map((event) => (
+            <EventItem
+              key={event.id}
+              id={event.id}
+              title={event.title}
+              location={event.location}
+              date={event.date}
+              image={event.image}
+              event={event}
+            />
+          ))}
       </ul>
     </>
   );
